@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Steffin Rayen</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.png">
+    <!-- ##### STYLESHEETS ##### -->
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Owl Carousel ->
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.default.css" rel="stylesheet">
+    <!-- Magnific popup -->
+    <link href="css/magnific-popup.min.css" rel="stylesheet">
+    <!-- Icons Fonts -->
+    <link href="icons-fonts/style.css" rel="stylesheet">
+    <!-- Preloader -->
+    <link href="css/preloader.min.css" rel="stylesheet">
+    <!-- Main styles -->
+    <link href="css/styles.min.css" rel="stylesheet">
+    <!-- Responsive styles -->
+    <link href="css/responsive.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,800,700italic' rel='stylesheet' type='text/css'>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--Disable Ctrl-->
+    <script type='text/javascript'>
+        var isCtrl = false;
+        document.onkeyup = function(e) {
+            if (e.which == 17)
+                isCtrl = false;
+        }
+        document.onkeydown = function(e) {
+            if (e.which == 17)
+                isCtrl = true;
+            if (((e.which == 65) || (e.which == 67) || (e.which == 80) || (e.which == 85) || (e.which == 86) || (e.which == 97) || (e.which == 99) || (e.which == 112) || (e.which == 117) || (e.which == 118) && isCtrl == true) || (e.which == 123) || (event.ctrlKey && event.shiftKey && event.keyCode == 73)) {
+                alert( & quot; Sorry I have disabled them... ? (-. - ) ? & quot;);
+                return false;
+            }
+        }
+        var isNS = (navigator.appName == 'Netscape') ? 1 : 0;
+        if (navigator.appName == 'Netscape') document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
+
+        function mischandler() {
+            return false;
+        }
+
+        function mousehandler(e) {
+            var myevent = (isNS) ? e : event;
+            var eventbutton = (isNS) ? myevent.which : myevent.button;
+            if ((eventbutton == 2) || (eventbutton == 3)) return false;
+        }
+        document.oncontextmenu = mischandler;
+        document.onmousedown = mousehandler;
+        document.onmouseup = mousehandler;
+    </script>
+    <!--Disable Ctrl-->
+</head>
+
+<body oncontextmenu='return false' onload='setbackground();' onmousedown='return false' onselectstart='return false'>
+    <!-- Preloader -->
+    <div class="preloader">
+        <span class="loader">
+      <span class="loader-inner"></span>
+        </span>
+    </div>
+    <!-- end Preloader -->
+    <div class="right-br"></div>
+    <div class="left-br"></div>
+    <div class="fixed-left-contact">
+        <p>+044&nbsp;247&nbsp;5260</p>
+    </div>
+    <div class="fixed-right-socials">
+        <ul class="list-unstiled">
+            <li><a href="https://facebook.com/profile.php?id=100012222886178" target="_blank"><i class="fa fa-facebook fa-3x"></i></a></li>
+            <li><a href="https://twitter.com/RayenSteffin" target="_blank"><i class="fa fa-twitter fa-3x"></i></a></li>
+            <li><a href="https://plus.google.com/101295419027600874060" target="_blank"><i class="fa fa-google-plus fa-3x"></i></a></li>
+            <li><a href="https://www.linkedin.com/profile/view?id=AAIAABz8gu8BUCzgTsCZpMILKWzGF304Bm4J1II" target="_blank"><i class="fa fa-linkedin fa-3x"></i></a></li>
+            <li><a href="https://www.instagram.com/steffinrayen/" target="_blank"><i class="fa fa-instagram fa-3x"></i></a></li>
+            <li><a href="https://in.pinterest.com/stefinrayen/" target="_blank"><i class="fa fa-pinterest fa-3x"></i></a></li>
+        </ul>
+    </div>
+    <!-- Sidebar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-2 sidebar">
+                <div class="col-sm-2 sidebarWrapper">
+                    <!-- Avatar -->
+                    <img class="user-pic" src="images/avatar.jpg" alt="">
+                    <div class="signature">
+                        <img class="img-responsive" alt="signature" src="images/signature.png">
+                    </div>
+                    <!-- Menu -->
+                    <div class="menu">
+                        <div class="toggle-btn">
+                            <span class="lines"></span>
+                        </div>
+                        <ul class="nav">
+                            <li class="active">
+                                <a href="#about">About me</a>
+                            </li>
+                            <li>
+                                <a href="#skills">Skills</a>
+                            </li>
+                            <li>
+                                <a href="#services">Services</a>
+                            </li>
+                            <li>
+                                <a href="#projects">Projects</a>
+                            </li>
+                            <li>
+                                <a href="#resume">Resume</a>
+                            </li>
+                            <li>
+                                <a href="#blog">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end Menu -->
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+    <!-- end Sidebar -->
+    <!-- About section -->
+    <section id="about">
+        <div class="about-background">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-9 col-sm-offset-3 aboutWrapper">
+                        <!-- Section Title -->
+                        <div class="nav-extra hidden-xs">
+                            <!-- Button Contact Modal -->
+                            <a data-target="#callmeModal" data-toggle="modal" href="#" class="btn btn-default">
+                                <span aria-hidden="true" class="icon_phone"></span>
+                            </a>
+                            <!-- Button 'Hire me' -->
+                            <a href="#contact" class="btn btn-info">Call me maybe?</a>
+                        </div>
+                        <div class="section-title">
+                            <h2><span>01</span>About me</h2>
+                        </div>
+                        <!-- end Section Title -->
+                        <h1>Hello, I am <strong>Steffin Rayen</strong><br/> and I like to DESIGN &amp; <span class="bg-color"> CODE! </span></h1>
+                        <p>I am just you average ambivert who prefers virtual learning and creating things from the knowledge gained compared to being among civilization that definitely needs to learn to be quiet. Well that being said I am still doing my degree which will be done by next few months ( woot! ). I am interested in almost anything and everything where my logic can be applied to modify the code and create a masterpiece that I, as a CS student, can be proud of. I might also be interested in making projects for you if you have any that needs some looking into. Mind you this is a one-man thing so I might not be able to do it by myself perfectly since I am a human or at least I was told as such. If you did approach me then I would make sure that I give you the details of what was done and help you to perfect your project by providing you with the needed help,kinda like a consultant maybe? </p>
+                        <br/>
+                        <br/>
+                        <br/>
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+    </section>
+    <!-- end About section -->
+    <section id="skills">
+        <div class="about-background">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-9 col-sm-offset-3 aboutWrapper">
+                        <div class="section-title">
+                            <h2><span>02</span>Skills</h2>
+                        </div>
+                        <!-- end Section Title -->
+                        <h1>What am I <strong>Interested</strong> in?</h1>
+                        <br/>
+                        <p>Well, besides the &nbsp;&nbsp;<span class="bg-color"> cosmos </span>&nbsp;&nbsp; the following could be considered...</p>
+                        <p>Warning : Not in any particular order! <br/> Reference : <a href="http://www.youth4work.com/y/steffinrayen/Steffin-Rayen-talents target=" _blank "">link</a> </p>
+                        <br/>
+                        <div class="skills">
+                            <div class="skill-outer">
+                                <h4>HTML5 &amp; CSS3<span>85%</span></h4>
+                                <div class="progress progress-striped active">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-outer">
+                                <h4>PHP &amp; MySQL<span>80%</span></h4>
+                                <div class="progress progress-striped active">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-outer">
+                                <h4>C<span>95%</span></h4>
+                                <div class="progress progress-striped active">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-outer">
+                                <h4>Python<span>90%</span></h4>
+                                <div class="progress progress-striped active">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-outer">
+                                <h4>C++<span>75%</span></h4>
+                                <div class="progress progress-striped active">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-outer">
+                                <h4>Blender<span>85%</span></h4>
+                                <div class="progress progress-striped active">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-outer">
+                                <h4>Android Studio<span>85%</span></h4>
+                                <div class="progress progress-striped active">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-outer">
+                                <h4>Raspberry Pi<span>65%</span></h4>
+                                <div class="progress progress-striped active">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                            <!-- end Skill 16 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services section -->
+    <section id="services">
+        <div class="services-background">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-9 col-sm-offset-3 servicesWrapper">
+                        <!-- Section Title -->
+                        <div class="section-title">
+                            <h2><span>03</span>Services</h2>
+                        </div>
+                        <!-- end Section Title -->
+                        <!-- Service box 1 -->
+                        <div class="service-box">
+                            <div>
+                                <i class="fa fa-cogs" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3>Web Development</h3>
+                                <p>Build engagingly beautiful websites that work on any device. I have always been fascinated with what the web had to offer me back then when I started to use computers. I have worked on both the front-end and the back-end.I fully understand that the web changes all the time, so I kinda keep my eyes peeled to stay ahead of the curve.</p>
+                            </div>
+                        </div>
+                        <!-- Service box 2 -->
+                        <div class="service-box">
+                            <div>
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3>UX and UI Design</h3>
+                                <p>I try to take into account the wide array of users, devices and screen resolutions in order to create the most usable and effective experiences. Communicating the conceptual approach/UX strategy and reasoning behind it, is present during the whole process of development. To achieve the goal of making the web a better place I trust in teamwork, latest technology and intuition.</p>
+                            </div>
+                        </div>
+                        <!-- Service box 3 -->
+                        <div class="service-box">
+                            <div>
+                                <i class="fa fa-terminal" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3>Design + Code</h3>
+                                <p>As a designer who can code (full-stack designer), I am able to test my ideas and creative vision and avoid concepts that work great in theory, but break down in practice.This means I can support your project at any stage it needs it. From strategy and brainstorming ideas, to defining the user experience, to interface design, to development, I love bringing great ideas to life no matter the screen size or platform.</p>
+                            </div>
+                        </div>
+                        <!-- Service box 4 -->
+                        <div class="service-box">
+                            <div>
+                                <i class="fa fa-mobile" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3>Mobile App Developement</h3>
+                                <p>I am a skilled remote developer. I have been coding Java as well as other languages. Coding is not just my job, but also my passion - I write awesome games and apps that push the limits of modern devices. It has always been my dream to be a remote freelance developer. I am always looking for awesome remote Android contracts to work on.</p>
+                            </div>
+                        </div>
+                        <!-- end Service box 4 -->
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+    </section>
+    <!-- end Services section -->
+    <!-- Project section -->
+    <section id="projects">
+        <div class="project-background">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-9 col-sm-offset-3 projectWrapper">
+                        <!-- Section Title -->
+                        <div class="section-title">
+                            <h2 class="pull-left"><span>04</span>Project</h2>
+                            <div class="project-filter pull-right">
+                                <ul>
+                                    <li class="btn btn-default filter active" data-filter="all">Show All</li>
+                                    <li class="btn btn-default filter" data-filter=".category-1">Websites</li>
+                                    <li class="btn btn-default filter" data-filter=".category-2">Mobile Apps</li>
+                                    <li class="btn btn-default filter" data-filter=".category-3">Prototype</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- end Section Title -->
+                        <div class="row">
+                            <div id="mix-container">
+                                <!-- Image 1 -->
+                                <div class="col-xs-12 col-sm-4 mix category-2">
+                                    <div class="imageWrapper">
+                                        <a class="lightbox" href="#popup-1">
+                                            <img src="images/project-1.jpg" alt="">
+                                            <!-- Image 1 source -->
+                                            <div class="imageHover">
+                                                <div>
+                                                    <h3>Sudoku Solver</h3>
+                                                    <span>Android</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!-- popup content -->
+                                        <div id="popup-1" class="mfp-hide popup-box">
+                                            <img src="images/project-1.jpg" alt="">
+                                            <!-- Image 1 source -->
+                                            <div>
+                                                <h3>Sudoku Solver</h3>
+                                                <p>This in one of my Android mini projects for my Mobile Application Development Laboratory that helped me to get a grip on the new tech in under a month. The initial plan was to make an OCR App that can read the Sudoku from the camera and display the answer. But half way through it proved to be very challenging, one of the reasons being that I only had and emulator on windows with no webcam. So I was not able to include the OCR. Instead, I created an app that can solve a sudoku problem when the user enters the problem manually.</p>
+                                            </div>
+                                        </div>
+                                        <!-- end popup content -->
+                                    </div>
+                                </div>
+                                <!-- Image 2 -->
+                                <div class="col-xs-12 col-sm-4 mix category-1">
+                                    <div class="imageWrapper">
+                                        <a class="lightbox" href="#popup-2">
+                                            <img src="images/project-2.jpg" alt="">
+                                            <!-- Image 2 source -->
+                                            <div class="imageHover">
+                                                <div>
+                                                    <h3>College Portal</h3>
+                                                    <span>Website</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!-- popup content -->
+                                        <div id="popup-2" class="mfp-hide popup-box">
+                                            <img src="images/project-2.jpg" alt="">
+                                            <!-- Image 2 source -->
+                                            <div>
+                                                <h3>College Portal</h3>
+                                                <p>This is a portal for the students of LICET to help them vies their academic details. This has two portals on for the students to view their details and to notify the corresponding class advisor if any wrong entry were found.And another portal for the Staff to enter their students details. I am currently working on this.</p>
+                                            </div>
+                                        </div>
+                                        <!-- end popup content -->
+                                    </div>
+                                </div>
+                                <!-- Image 3 -->
+                                <div class="col-xs-12 col-sm-4 mix category-3">
+                                    <div class="imageWrapper">
+                                        <a class="lightbox" href="#popup-3">
+                                            <img src="images/project-3.jpg" alt="">
+                                            <!-- Image 3 source -->
+                                            <div class="imageHover">
+                                                <div>
+                                                    <h3>MS Paint</h3>
+                                                    <span>Prototype</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!-- popup content -->
+                                        <div id="popup-3" class="mfp-hide popup-box">
+                                            <img src="images/project-3.jpg" alt="">
+                                            <!-- Image 3 source -->
+                                            <div>
+                                                <h3>MS Paint</h3>
+                                                <p>This project is a prototype of the basic model MS paint developed using C. This was submitted as a mini-project for my Computer Graphics Laboratory. There is not much to describe here. There is a small workspace in the center, a set of tools on the side shelf, and some options to manipulate the file. </p>
+                                            </div>
+                                        </div>
+                                        <!-- end popup content -->
+                                    </div>
+                                </div>
+                                <!-- Image 4 -->
+                                <div class="col-xs-12 col-sm-4 mix category-1">
+                                    <div class="imageWrapper">
+                                        <a class="lightbox" href="#popup-4">
+                                            <img src="images/project-4.jpg" alt="">
+                                            <!-- Image 4 source -->
+                                            <div class="imageHover">
+                                                <div>
+                                                    <h3>Daunting Debutant</h3>
+                                                    <span>Website</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!-- popup content -->
+                                        <div id="popup-4" class="mfp-hide popup-box">
+                                            <img src="images/project-4.jpg" alt="">
+                                            <!-- Image 4 source -->
+                                            <div>
+                                                <h3>Daunting Debutant</h3>
+                                                <p>Though this is a *still under construction* project I don't think I would know as much as I do if it were not for the blog that I have been maintaining since Feb,2016. This could be considered a personal (pretty much for the public to view) log of things that I have managed to get my hands on. I might not be and expert in everything that I have put there, It is more like me trying to find out where my true interest lie.</p>
+                                            </div>
+                                        </div>
+                                        <!-- end popup content -->
+                                    </div>
+                                </div>
+                                <!-- Image 5 -->
+                                <div class="col-xs-12 col-sm-4 mix category-2">
+                                    <div class="imageWrapper">
+                                        <a class="lightbox" href="#popup-5">
+                                            <img src="images/project-5.jpg" alt="">
+                                            <!-- Image 2 source -->
+                                            <div class="imageHover">
+                                                <div>
+                                                    <h3>Hangman</h3>
+                                                    <span>Android</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!-- popup content -->
+                                        <div id="popup-5" class="mfp-hide popup-box">
+                                            <img src="images/project-5.jpg" alt="">
+                                            <!-- Image 2 source -->
+                                            <div>
+                                                <h3>Hangman</h3>
+                                                <p>This was my second game developed in Android. I did this as a side project for my Mobile Applications Laboratory. The game was introduced by one of my colleagues and I thought why not! Because I strongly believe that the best way to master the syntax of a language is to code a basic model game. Once the logic was laid in pen and paper it took me less than a day to present a working model.</p>
+                                            </div>
+                                        </div>
+                                        <!-- end popup content -->
+                                    </div>
+                                </div>
+                                <!-- Image 6 -->
+                                <div class="col-xs-12 col-sm-4 mix category-3">
+                                    <div class="imageWrapper">
+                                        <a class="lightbox" href="#popup-6">
+                                            <img src="images/project-6.jpg" alt="">
+                                            <!-- Image 3 source -->
+                                            <div class="imageHover">
+                                                <div>
+                                                    <h3>Magic Mirror</h3>
+                                                    <span>Prototype</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!-- popup content -->
+                                        <div id="popup-6" class="mfp-hide popup-box">
+                                            <img src="images/project-6.jpg" alt="">
+                                            <!-- Image 3 source -->
+                                            <div>
+                                                <h3>Magic Mirror</h3>
+                                                <p>This is my final year project. Introducing Magic Mirror - the window of possibilty. Whether you're getting ready for work or for a night out, this interactive, heads-up display puts relevant information right where you need it. Or atleast that's the plan so far?</p>
+                                            </div>
+                                        </div>
+                                        <!-- end popup content -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end Inner row -->
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+    </section>
+    <!-- end project section -->
+    <!-- Resume section -->
+    <section id="resume">
+        <div class="resume-background">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-9 col-sm-offset-3 resumeWrapper">
+                        <!-- Section Title -->
+                        <div class="section-title">
+                            <h2><span>05</span>Resume</h2>
+                        </div>
+                        <!-- end Section Title -->
+                        <!-- Resume box 1 -->
+                        <div class="resume-box">
+                            <div>
+                                <i class="fa fa-university" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3>Loyola ICAM College of Engineering &amp; Technology</h3>
+                                <span>2013 - Present</span>
+                                <p>I am currently pursuing my bachelors degree. Nothing much to say I guess?</p>
+                            </div>
+                        </div>
+                        <!-- Resume box 2 -->
+                        <div class="resume-box">
+                            <div>
+                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3>Goodshepherd School</h3>
+                                <span>2006 - 2013</span>
+                                <p>I don't know why this is necessary, But I really don't have much to talk about my accademics other than the fact that a lot of money was invested in me. So here goes nothing. So now you know what school I am from, I wonder what use is that to you though.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+    </section>
+    <!-- end Resume section -->
+    <!-- Blog section -->
+    <section id="blog">
+        <div class="blog-background">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-9 col-sm-offset-3 blogWrapper">
+                        <!-- Section Title -->
+                        <div class="section-title">
+                            <h2><span>06</span>Blog Posts</h2>
+                        </div>
+                        <!-- end Section Title -->
+                        <!-- Blog Post 1 -->
+                        <div class="blog-post row">
+                            <div class="col-sm-4">
+                                <div class="blog-img">
+                                    <img src="images/blog-img-1.jpg" alt="">
+                                    <span class="card-title post-ver-date"><span class="icon_calendar" aria-hidden="true"></span> February 10, 2016</span>
+                                </div>
+                                <div class="blog-dis">
+                                    <h3>Welcome Yo!!</h3>
+                                    <p>So I have this heavy case of paranoia and that had me a bit perturbed about my future leading me to learn new things on a daily basis. And I have been making a blog on what I have managed to get my hands on so that I can look back and laugh at myself?</p>
+                                    <a class="btn btn-default" href="https://hithertodauntless.blogspot.in/2016/02/my-very-1st-step-into-doing-something.html">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="blog-img">
+                                    <img src="images/blog-img-2.jpg" alt="">
+                                    <span class="card-title post-ver-date"><span class="icon_calendar" aria-hidden="true"></span> May 05, 2016</span>
+                                </div>
+                                <div class="blog-dis">
+                                    <h3>The Random Post Series</h3>
+                                    <p>Though the blog was initially made to soothe my *mind* it also ended up serving as a stress reliever when I accidentally overworked myself.</p>
+                                    <a class="btn btn-default" href="https://hithertodauntless.blogspot.in/search/label/Random">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="blog-img">
+                                    <img src="images/blog-img-3.jpg" alt="">
+                                    <span class="card-title post-ver-date"><span class="icon_calendar" aria-hidden="true"></span> June 06, 2016</span>
+                                </div>
+                                <div class="blog-dis">
+                                    <h3>The JavaScript Series</h3>
+                                    <p>This is most probably one of my favorite series followed by the Blender Series. They just comprise a few of my experiments with web scripts. Hope you like what you see!!! WARNING: Heavy page load so be warned!?!</p>
+                                    <a class="btn btn-default" href="https://hithertodauntless.blogspot.in/search/label/JavaScript">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end Blog Post 3 -->
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+    </section>
+    <!-- end Blog section -->
+    <!-- Contact section -->
+    <section id="contact">
+        <div class="contact-background">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-9 col-sm-offset-3 contactWrapper">
+                        <!-- Section Title -->
+                        <div class="section-title">
+                            <h2><span>07</span>Get In Touch</h2>
+                        </div>
+                        <!-- end Section Title -->
+                        <p>Got a second? Why not introduce yourself or drop me a line. I don't bite so anything you wanna say or ask is recommended. Just don't be shy.I suck at accounting but if you want something designed or coded that simply kicks ass, I may be exactly what you are looking for. Just ask.I will do my best to get back to you pronto.</p>
+                        <br/>
+                        <br/>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 contact-form">
+                                <div class="widget">
+                                    <form method="post" id="contactform">
+                                        <div class="input-style">
+                                            <div>
+                                                <input class="form-control" type="text" id="name" name="name" placeholder="Name">
+                                            </div>
+                                            <div>
+                                                <input class="form-control" type="email" id="email" name="email" placeholder="E-Mail">
+                                            </div>
+                                        </div>
+                                        <div class="text-style">
+                                            <textarea class="form-control" name="message" id="message" placeholder="Message"></textarea>
+                                        </div>
+                                        <input type="submit" id="submit" class="btn btn-info" name="submit" value="Send Message">
+                                        <div class="submit-result">
+                                            <p id="success">Your Message has been sent!</p>
+                                            <p id="error">Hey there, I know you might have after some tries figured out a way to enter your details and finally mange to click the send button. But apparently this is kinda outta order. I'll get back to you if you would be kind enough to use any of the social media links that I have provided here? Thankyou for your time!</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 contact-info">
+                                <div class="widget">
+                                    <ul>
+                                        <li>
+                                            <h3><span class="icon_pin" aria-hidden="true"></span> Address</h3>
+                                            <p>Kodambakkam, Chennai 24.</p>
+                                        </li>
+                                        <li>
+                                            <h3><span class="icon_phone" aria-hidden="true"></span> Phone</h3>
+                                            <p>+(91) 9444 55 8267</p>
+                                        </li>
+                                        <li>
+                                            <h3><span class="icon_mail" aria-hidden="true"></span> Email</h3>
+                                            <p>stefinrayen@gmail.com</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end Inner row -->
+                        <!-- Google Maps -->
+                        <div class="google-maps">
+                            <iframe src="https://www.google.com/maps/embed/v1/place?q=Chennai,+Tamil+Nadu,+India&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                        <!-- end Google Maps -->
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+    </section>
+    <!-- end Contact section -->
+    <!-- Footer -->
+    <footer class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-sm-offset-3 footer-background">
+                    <div class="row">
+                        <div class="col-sm-6 text-left">
+                            Copyright &copy; 2016 Steffin Rayen. All Right Reserved
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            Designed With <span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-terminal fa-stack-1x fa-inverse"></i></span> By <a target="_blank" href="facebook.com/profile.php?id=100012222886178">Steffin Rayen</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </footer>
+    <!-- end Footer -->
+    <!-- ##### JAVASCRIPTS ##### -->
+    <!-- jQuery Library -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Retina Graphics -->
+    <script src="js/retina.min.js"></script>
+    <!-- Magnific popup -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!-- Theme Plugins -->
+    <script src="js/theme-plugins.min.js"></script>
+    <!-- Custom Scripts -->
+    <script src="js/scripts.min.js"></script>
+</body>
+
+</html>
