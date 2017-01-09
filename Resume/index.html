@@ -1,0 +1,631 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<title>Steffin Rayen</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="Fake Resume">
+		<meta name="keywords" content="Resume,Fake,Task,Responsive,Steffin Rayen,Steffin,Random">
+		<meta name="author" content="Steffin Rayen">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script>
+			/* Wow you are reading the source!
+			**
+			** Since you are really into details, you should know that the reason as to why I put this up for the world 
+			** to see is that I was given a task. To create a fake portfolio with a Calendar plugin, which on page 
+			** scrolling updates to the timeline in which the achievements were documented to take place. I had fun 
+			** while making this :) 
+			**
+			** That last bit was a personal note to me in case I forget about this lol me and my selective amenisia :(
+			**
+			** And, If you are interested in recruiting me, be sure to mention this graffiti when you contact me, that  
+			** will get you my full attention.
+			**
+			**
+			**      ██████ ▄▄▄█████▓▓█████   █████▒ █████▒██▓ ███▄    █     ██▀███   ▄▄▄     ▓██   ██▓▓█████  ███▄    █ 
+			**    ▒██    ▒ ▓  ██▒ ▓▒▓█   ▀ ▓██   ▒▓██   ▒▓██▒ ██ ▀█   █    ▓██ ▒ ██▒▒████▄    ▒██  ██▒▓█   ▀  ██ ▀█   █ 
+			**    ░ ▓██▄   ▒ ▓██░ ▒░▒███   ▒████ ░▒████ ░▒██▒▓██  ▀█ ██▒   ▓██ ░▄█ ▒▒██  ▀█▄   ▒██ ██░▒███   ▓██  ▀█ ██▒
+			**      ▒   ██▒░ ▓██▓ ░ ▒▓█  ▄ ░▓█▒  ░░▓█▒  ░░██░▓██▒  ▐▌██▒   ▒██▀▀█▄  ░██▄▄▄▄██  ░ ▐██▓░▒▓█  ▄ ▓██▒  ▐▌██▒
+			**    ▒██████▒▒  ▒██▒ ░ ░▒████▒░▒█░   ░▒█░   ░██░▒██░   ▓██░   ░██▓ ▒██▒ ▓█   ▓██▒ ░ ██▒▓░░▒████▒▒██░   ▓██░
+			**    ▒ ▒▓▒ ▒ ░  ▒ ░░   ░░ ▒░ ░ ▒ ░    ▒ ░   ░▓  ░ ▒░   ▒ ▒    ░ ▒▓ ░▒▓░ ▒▒   ▓▒█░  ██▒▒▒ ░░ ▒░ ░░ ▒░   ▒ ▒ 
+			**    ░ ░▒  ░ ░    ░     ░ ░  ░ ░      ░      ▒ ░░ ░░   ░ ▒░     ░▒ ░ ▒░  ▒   ▒▒ ░▓██ ░▒░  ░ ░  ░░ ░░   ░ ▒░
+			**    ░  ░  ░    ░         ░    ░ ░    ░ ░    ▒ ░   ░   ░ ░      ░░   ░   ░   ▒   ▒ ▒ ░░     ░      ░   ░ ░ 
+			**          ░              ░  ░               ░           ░       ░           ░  ░░ ░        ░  ░         ░ 
+			**                                                                                ░ ░                       
+			**
+			** That btw was my name -_-
+			**
+			** Happy Coding ;)
+			*/
+		</script>
+		<script src="assets/js/jquery.min.js"></script>		
+		<link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP9/AAD+PwAA/38AAP9/AAD/fwAA/j8AAP3fAAD93wAA/d8AAP4/AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon" />
+	</head>
+
+	<body>
+
+	<!-- Page Wrapper -->
+		<div id="page-wrapper">
+
+			<!--Calendar-->
+				<style type="text/css">
+					figure {
+						position: fixed;
+						bottom:1.0em;
+						right:1.0em;
+						width: 128px;
+						height: 111px;
+						background-color: #ffffff;
+						border-radius: 10px;	
+						z-index: 10000;				  
+					}
+					figure:before {
+						content: '';
+						display: block;
+						width: 128px;
+						height: 69px;
+						border-radius: 10px 10px 0 0;
+						background-image: -webkit-linear-gradient(white 0%, #edeeef 100%);
+						background-image: -moz-linear-gradient(white 0%, #edeeef 100%);
+						background-image: -o-linear-gradient(white 0%, #edeeef 100%);
+						background-image: linear-gradient(white 0%, #edeeef 100%);
+					}
+					figure header {
+						width: 128px;
+						height: 27px;
+						position: absolute;
+						top: -1px;
+						background-color: #000;
+						border-radius: 10px 10px 0 0;
+						border-bottom: 3px solid #e5e5e5;
+						font: 400 15px/27px Arial, Helvetica, Geneva, sans-serif;
+						letter-spacing: 0.5px;
+						color: #fff;
+						text-align: center;
+					}
+					figure section {
+						width: 128px;
+						height: 80px;
+						position: absolute;
+						top: 28px;
+						font: 400 55px/75px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+						letter-spacing: -2px;
+						color: #000;
+						text-align: center;
+						z-index: 10;
+					}
+					figure section:before {
+						content: '';
+						display: block;
+						position: absolute;
+						top: 35px;
+						width: 3px;
+						height: 10px;
+						background-image: -webkit-linear-gradient(#b5bdc5 0%, #e5e5e5 100%);
+						background-image: -moz-linear-gradient(#b5bdc5 0%, #e5e5e5 100%);
+						background-image: -o-linear-gradient(#b5bdc5 0%, #e5e5e5 100%);
+						background-image: linear-gradient(#b5bdc5 0%, #e5e5e5 100%);
+					}
+					figure section:after {
+						content: '';
+						display: block;
+						position: absolute;
+						top: 35px;
+						right: 0;
+						width: 3px;
+						height: 10px;
+						background-image: -webkit-linear-gradient(#b5bdc5 0%, #e5e5e5 100%);
+						background-image: -moz-linear-gradient(#b5bdc5 0%, #e5e5e5 100%);
+						background-image: -o-linear-gradient(#b5bdc5 0%, #e5e5e5 100%);
+						background-image: linear-gradient(#b5bdc5 0%, #e5e5e5 100%);
+					}
+				</style>
+
+				<figure id="calender">
+					<header id="monthyear"></header>
+					<section id="date"></section>
+				</figure>
+			
+			<!-- Header -->
+				<header id="header" class="alt">
+					<h1>Steffin Rayen</h1>
+					<nav>
+						<a href="#menu">Go to Date</a>
+					</nav>
+				</header>
+
+			<!-- Menu -->
+				<nav id="menu">
+					<div class="inner">
+						<h2>Go on pick one :)</h2>
+						<p>And pray to <strong>God</strong> that it should work!</p>
+						<p>Idea dropped. Initially planned to display a calender with links to the life events. Turns out I read the description wrong lol :D</p>
+						<a href="" class="close">Close</a>
+					</div>
+				</nav>
+
+			<!-- Banner -->
+				<section id="banner">
+					<div class="inner">
+						<div class="logo"><span class="icon fa-venus"></span></div>
+						<h2>Steffin Rayen</h2>
+						<p>Designer + Developer + Owner of a curious mind :)</p>
+					</div>
+				</section>
+
+			<!-- Wrapper -->
+				<!-- Content -->
+					<div class="wrapper">
+
+						<!--Initial kinda true to my knowledge resume stuff?-->
+							<div class="inner ">
+
+								<section >
+									<h2 class="major">Objective</h2>
+									<blockquote>I am a 20-year-old hacker who is passionate about programming and creating elegant software and is a FOSS enthusiast! Highly seasoned and reliable Developer with a strong work ethic and highly self motivated. Adept multitasker capable of bringing simultaneous web page creation and repair projects to completion with full accuracy and efficiency. </blockquote>
+								</section>
+
+								<section>
+									<div class="row"> 
+										<div class="6u 12u$(small)">
+											<h2 class="major">Skills</h2>
+											<ul class="alt">
+												<li><a class="icon fa-android"><span class="label"></span></a> &nbsp;&nbsp; Android App Development</li>
+												<li><a class="icon fa-paint-brush"><span class="label"></span></a> &nbsp;&nbsp; Graphics Designing</li>
+												<li><a class="icon fa-terminal"><span class="label"></span></a> &nbsp;&nbsp; Programming</li>
+												<li><a class="icon fa-gamepad"><span class="label"></span></a> &nbsp;&nbsp; Game Development</li>
+												<li><a class="icon fa-laptop"><span class="label"></span></a> &nbsp;&nbsp; Web Development</li>
+											</ul>
+										</div>
+										<div class="6u 12u$(small)">
+											<h2 class="major">Tools of the trade</h2>
+											<ul class="alt">
+												<li><a class="icon fa-chevron-circle-right"><span class="label"></span></a> &nbsp;&nbsp; Android Studio</li>
+												<li><a class="icon fa-chevron-circle-right"><span class="label"></span></a> &nbsp;&nbsp; Blender</li>
+												<li><a class="icon fa-chevron-circle-right"><span class="label"></span></a> &nbsp;&nbsp; Gimp</li>
+												<li><a class="icon fa-chevron-circle-right"><span class="label"></span></a> &nbsp;&nbsp; Adobe Spark</li>
+												<li><a class="icon fa-chevron-circle-right"><span class="label"></span></a> &nbsp;&nbsp; WordPress</li> 
+											</ul>
+										</div>
+									</div>
+								</section>
+
+								<section style="clear: both;">
+									<h2 class="major">Getting down to actual business!</h2>
+									<p>So now that those are out of the way, I would love to move on to some <strong>Educational</strong> Qualification, but really it is the same old. I don't think it is worth mentioning here. So moving on, Allow me to introduce myself! I'm a final year student at LICET. I'm studying Computer Science, and Mathematics with a Computational Emphasis is one of my fav read. Basically, I do a lot of computer and math related stuff! </p>
+
+									<blockquote>When I'm not coding or pretending to be a mathematician, I like to listen to music, bake cakes, read and learn voraciously, and struggle through a video game or two. </blockquote>
+
+									<p>Now, you might be thinking: "Why does this kid have a website? What could she possibly use it for?". And the answer's are: "How could I miss the opportunity?" and "What can't I do with it?". I am a little <em>cukoo</em> in the brain, try to bear with me a little longer :( </p>
+
+									<p>So yeah, besides that I am a badass with a super free internet, the reason as to why I put this up for the world to see is that I was given a task. To create a fake portfolio with a Calendar plugin to <strike> take to my, ofc the fake achievements :P So go ahead if you are lucky enough you will find my <strong>fake</strong> achievements using the Calendar on top/side depending on your screen size.</strike> change dynamically to reflect the timeline of the events mentioned (or something along those lines?).</p>
+								</section>
+
+								<section>
+									<h2 class="major">So here goes my fake details :)</h2>
+									<p>Please don't be offended. I was on a time limit. Took almost 3 days to get this thing to work. There is still a lot of places I would like to work on... But not right now cause I have more pressing matters to attend to... like getting myself placed as a developer into an established company. Moving on, I'd love to hear from you! And do feel free to scroll down.</p>
+								</section>
+
+
+								</div>
+							</div>
+
+						<!-- one -->
+							<section id="one" class="wrapper alt spotlight style1">
+								<div class="inner">
+									<a class="image"><img src="images/0.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Employment &amp; Responsibilities:</h2>
+										<strong>1992 - Present</strong>
+										<p>I have been actively seeking employment. The recession hit my town earlier than expected. Much, much earlier. At least that’s what I put my twenty-five years of unemployment down to.</p>
+
+									</div>
+								</div>
+							</section>
+
+						<!-- two -->
+							<section id="two" class="wrapper spotlight style2">
+								<div class="inner">
+									<a class="image"><img src="images/1.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Pizza Delivery Girl:</h2>
+										<strong>1991 - 1992</strong>
+										<p>Responsibilities included delivering pizzas to people who ordered pizzas and also, to demonstrate my initiative, delivering pizzas to people who didn’t order pizzas.</p>
+
+									</div>
+								</div>
+							</section>
+
+						<!-- three -->
+							<section id="three" class="wrapper alt spotlight style3">
+								<div class="inner">
+									<a class="image"><img src="images/2.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Shoe Shop Manager:</h2>
+										<strong>1 Hour in May 1991</strong>
+										<p>Responsibilities included ensuring customers buy the right shoes for their feet and measuring their feet with the foot measurer thing. Responsibilities ended when the real manager came back from lunch and told me to get out of his shop.</p>
+
+									</div>
+								</div>
+							</section>
+
+						<!-- four -->
+							<section id="four" class="wrapper spotlight style2">
+								<div class="inner">
+									<a class="image"><img src="images/3.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Self-Employed Air Guitar Teacher:</h2>
+										<strong>1983 - 1986</strong>
+										<p>Taught Air Guitar to competitors of the Air Guitar World Championships. Unfortunately, my students were useless as they kept breaking the strings and losing the plectrums. I also taught Air Mandolin, Air Triangle and the rarely mastered, Air One-Man-Band. I practiced the latter so much that I couldn’t stand still or walk normally anymore.</p>
+
+									</div>
+								</div>
+							</section>
+
+						<!-- five -->
+							<section id="five" class="wrapper alt spotlight style1">
+								<div class="inner">
+									<a class="image"><img src="images/4.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Computer Programmer:</h2>
+										<strong>1978 - 1983</strong>
+										<p>Proficient in C, C+, C++, C#, C##, C#+# and C#*#+$%^£$!(“@#!!</p>
+									</div>
+								</div>
+							</section>
+
+						<!-- six -->
+							<section id="six" class="wrapper spotlight style2">
+								<div class="inner">
+									<a class="image"><img src="images/5.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Proofreader:</h2>
+										<strong>1975 - 1978</strong>
+										<p>Proffred ceveral teknical bokos aswe all nkow thear ar count less misteaks inn tem. I was sacked when I admitted I didn’t actually read the books as I waited for the film adaptations instead. Perhaps I missed the point but at least I didn’t miss the excellent C++ In a Nutshell: The Movie</p>
+
+									</div>
+								</div>
+							</section>
+
+						<!-- seven -->
+							<section id="seven" class="wrapper alt spotlight style3">
+								<div class="inner">
+									<a class="image"><img src="images/6.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Chair:</h2>
+										<strong>1960 - 1969</strong>
+										<p>I was a sturdy chair in a busy city centre café. Had numerous compliments of being surprisingly comfortable. It was just a shame I couldn’t sit on myself. I know this because I tried. Many times.</p>
+
+									</div>
+								</div>
+							</section>
+
+						<!-- eight -->
+							<section id="eight" class="wrapper spotlight style2">
+								<div class="inner">
+									<a class="image"><img src="images/7.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Unemployed:</h2>
+										<strong>1957 - 1960</strong>
+										<p>My first experience of the unemployment sector. This time, for a bit of a well-earned break, I was actively avoiding employment.</p>
+
+									</div>
+								</div>
+							</section>
+
+						<!-- nine -->
+							<section id="nine" class="wrapper alt spotlight style1">
+								<div class="inner">
+									<a class="image"><img src="images/8.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Education:</h2>
+										<strong>1936 - 1957</strong>
+										<p>Educated to a high degree although I’ve forgotten it all now.</p>
+
+									</div>
+								</div>
+							</section>
+
+						<!-- ten -->
+							<section id="ten" class="wrapper spotlight style2">
+								<div class="inner">
+									<a class="image"><img src="images/9.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Nothing Much:</h2>
+										<strong>1934 - 1936</strong>
+										<p>Cried a lot and shat myself on a daily basis.</p>
+
+									</div>
+								</div>
+							</section>
+
+						<!-- eleven -->
+							<section id="eleven" class="wrapper alt spotlight style3">
+								<div class="inner">
+									<a class="image"><img src="images/10.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Born on 9th October 1934:</h2>
+										<strong>9th Oct 1933</strong>
+										<p>Looked for employment immediately upon exiting the womb, but unfortunately no one took me seriously as I was a baby and I was completely and utterly useless.</p>
+
+									</div>
+								</div>
+							</section>
+
+						<!-- twelve -->
+							<section id="twelve" class="wrapper spotlight style2">
+								<div class="inner">
+									<a class="image"><img src="images/10.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Didn’t exist:</h2>
+										<strong>1805 - 1933</strong>
+										<p></p>
+
+									</div>
+								</div>
+							</section>
+
+						<!-- thirteen -->
+							<section id="thirteen" class="wrapper alt spotlight style1">
+								<div class="inner">
+									<a class="image"><img src="images/10.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">1 nanosecond on 14th April 1805:</h2>
+										<strong>14th April 1805</strong>
+										<p>Due to an as yet undiscovered law of physics, I existed for a brief moment, but after deep consideration I decided against it long-term.</p>
+
+									</div>
+								</div>
+							</section>
+
+						<!-- fourteen -->
+							<section id="fourteen" class="wrapper spotlight style2">
+								<div class="inner">
+									<a class="image"><img src="images/10.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Birth of the Universe (Big Bang):</h2>
+										<strong>1805</strong>
+										<p>Didn’t exist. Is this too detailed? Maybe I don’t need to specify this?</p>
+
+									</div>
+								</div>
+							</section>
+
+						<!-- fifteen -->
+							<section id="fifteen" class="wrapper alt spotlight style3">
+								<div class="inner">
+									<a class="image"><img src="images/10.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Pre Big Bang:</h2>
+										<strong>Alpha time</strong>
+										<p>I’m not sure. I don’t know what existed before the Big Bang, if anything. So I’m not sure if I didn’t exist or did exist in another form. If I did exist then I’m sure I was hard at work job hunting.</p>
+
+									</div>
+								</div>
+							</section>
+
+						<!--Project Details-->
+							<section id="project" class="wrapper style1">
+								<div class="inner">
+									<h2 class="major">Project Handled:</h2>
+									<p>I am popularly known as the Door-to-Door Inventor. So what got me that name one might ask? Guess who traveled door-to-door and requested which products people required and invented them on the spot. Yes, Me! Yes, on the spot. My most notable inventions were:</p>
+
+
+									<ol class="alt">
+										<li><strong>Self-blowing bubble gum</strong>: invented at the request of local idiot, Raju Thickstupidhead. Little Raju could never manage to blow bubbles and was ridiculed about this even by people with no mouths, but my new self-blowing bubble gum had the potential to transform Raju’s life as bubbles are ‘blown’ automatically once moisture is added. However, my invention was severely criticized by the local media after Raju accidentally swallowed his bubble gum and tragically died after his insides were clogged up with ever-expanding bubble gum. I was very upset about this because Raju ruined my chances of selling my product and making a fortune. However, I’ve forgiven little Raju, which I feel highlights the mature and responsible side to my character.</li>
+
+										<li>Mrs. Puliyama of 31 Karachavu Road requested that I invent a <strong>special button that makes door-to-door callers disappear</strong>. I did exactly what she required and yet she never paid me a penny. I was very annoyed about this once I’d made it out from the Nebulai-Kronos dimension.</li>
+									</ol>
+
+								</div>
+							</section>
+
+						<!--Educational Details-->
+							<section id="education" class="wrapper alt style2">
+								<div class="inner">
+									<h2 class="major">Educational Qualification:</h2>
+									<p>They are the bunch of usual one's :)</p>
+
+									<ol class="alt">
+										<li><strong>Home-Schooled for Secondary Education</strong>: My parents ran away from home when I was eleven so I stayed at home and self-taught myself. Afterward, I self-examined myself and I achieved 1,999 Grade A distinctions in 2,000 subjects in SREB (Steffin Rayen Examination Board) - a record for SREB and more qualifications than anyone else ever. The only subject I failed was geography as I didn’t know where the exam room was. Turned out it was the box room. I lodged numerous stern complaints with SREB over correct exam room labeling but sadly they have repeatedly ignored my letters. It’s almost as if they don’t exist.</li>
+
+										<li><strong>Nursery</strong>: Learnt soft skills such as not falling over when walking and putting food into my mouth rather than up my nostrils. Learned an increasingly populated vocabulary including the words jelly, poo, and antidisestablishmentarianism. I also learned the meaning of the word ‘share’ and so I regularly took my classmate’s food.</li>
+
+										<li><strong>Early Years</strong>: Potty trained in Kadalore by the world famous Potty Trainer, Kadal Arasi, who was clearly destined for a toilet-related career. I am proud to say I was the youngest ever to poo into a pot unassisted. At least that’s what my parents told me, just before they shaved off their eyebrows and hid in a bin for three days.</li>
+									</ol>
+
+								</div>
+							</section>
+
+						<!--Personal Interest-->
+							<section id="interest" class="wrapper style1">
+								<div class="inner">
+									<h2 class="major">Liesiure Interest:</h2>
+									<p>Everyone has their own list of things they would do in their leisure time right? Or at least that was what I was told. So I brainstormed a bit ... And turns out though being the lazy ass that I am I have a few that I like to shed some light on :)</p>
+
+									<ol class="alt">
+										<li>I have a keen interest in languages and I am currently learning Esperanto as I plan to move to sunny Esperanto when I retire. The Esperanza's are such a welcoming and friendly race, I’m surprised more people don’t move there.</li>
+										<li>I am an expert in the ancient art of potato-mache. This involves patience, attention to detail and a strong dislike of sensible hobbies. I founded and now run the International Potato-Mache Club, or INTPOTMACCLU for short, and currently hold the coveted Potato-Mache of the Year award. Although I will put it down if I was given this job as I find it awkward to type with.</li>
+										<li>I am an experienced and skillful drinker. My drink of choice is a single malt whiskey, preferably Glenbenloch, because of its high quality. Just like me. That is, I’m trying to say that I’m high quality, I’m not saying I’m a high-quality whiskey. And just to be clear, I am not a whiskey of any quality. Anyway, I sincerely hope my high quality shines through.</li>
+										<li>I am typing proficient, skilled at a proven 11 wpm. Please note that this decreases to 1.76 wpm after a glass of Glenbenloch.</li> 
+										<li>I am also a firm believer in charity work and so I am very pleased when other people do it.</li>
+										<li>Additionally, I have an excellently inventive and fertile imagination and have even successfully created an imaginary character - my son, Steven Rayen. This is something few people can say they have ever achieved. While I’m on the subject, is there a suitable vacancy for him at your company? It would be handy if we worked at the same location as we could car share and take it in turns to drive. I enjoy it when Steven drives as I can relax and go to sleep.</li>
+									</ol>
+
+								</div>
+							</section>
+
+						<!-- Footer -->
+							<section id="footer">
+								<div class="inner">
+									<h2 class="major">Get in touch</h2>
+									<p>Not bad eh? You actually managed to scroll all the way down here :) So you wanna hire me? Or am I getting ahead of myself lol :D Well whatever it is like I mentioned earlier, I would love to hear from you :P But the form is not working though (I am gonna shove that under the carpet as a future development prospect)? So why did I add that? Well, to be frank, It's cause it kinda looks fancy don't you think? But feel free to use the social links. Yeah, they are for real to my actual working sites. Thanks a ton for scrolling through this sad excuse of a resume though :)</p>
+									<form method="post" action="#">
+										<div class="field">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field">
+											<label for="email">Email</label>
+											<input type="email" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" /></li>
+										</ul>
+									</form>
+									<ul class="contact">
+										<li class="fa-home">
+										UI Colony<br />
+										Kodambakkam<br />
+										Chennai, Tamil Nadu.
+										</li>
+										<li class="fa-phone">(91) 9444557628</li>
+										<li class="fa-envelope"><a href="mailto:stefinrayen@gmail.com?Subject=Fake%20Resume">stefinrayen@gmail.com</a></li>
+										<li class="fa-pinterest-p"><a href="https://in.pinterest.com/stefinrayen/">pinterest.com/stefinrayen/</a></li>
+										<li class="fa-facebook"><a href="https://www.facebook.com/stefinrayen">facebook.com/stefinrayen</a></li>
+										<li class="fa-file-pdf-o"><a href="https://drive.google.com/open?id=0BwgIhR5adxOCSmpEUHBPSVFUeDQ">Want my real resume?</a></li>
+									</ul>
+									<ul class="copyright">
+										<li>&copy; Steffin Rayen. All rights reserved.</li>
+									</ul>
+								</div>
+							</section>
+
+					</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/skel.min.js"></script>		
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="assets/js/main.js"></script>
+		<script>
+			var newMonthYear = document.getElementById("monthyear");
+			var newDate = document.getElementById("date");
+			var month = new Array('Jan', 'Feb', 'Mar', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
+			var dateObj = new Date();
+
+			var $win = $(window);
+			
+			var $calender = $("#calender");
+
+			var $one = $("#one");
+			var $two = $("#two");
+			var $three = $("#three");
+			var $four = $("#four");
+			var $five = $("#five");
+			var $six = $("#six");
+			var $seven = $("#seven");
+			var $eight = $("#eight");
+			var $nine = $("#nine");
+			var $ten = $("#ten");
+			var $eleven = $("#eleven");
+			var $twelve = $("#twelve");
+			var $thirteen = $("#thirteen");
+			var $fourteen = $("#fourteen");
+			var $fifteen = $("#fifteen");
+			var $project = $("#project");
+			var $education = $("#education");
+			var $interest = $("#interest");
+			var $footer = $("#footer");
+
+			$(window).scroll(function(){
+			    var windowHeight = $win.height();
+			    
+			    var calenderTop = $calender.offset().top - $win.scrollTop();
+
+			    var oneTop = $one.offset().top - $win.scrollTop();
+			    var twoTop = $two.offset().top - $win.scrollTop();
+			    var threeTop = $three.offset().top - $win.scrollTop();
+			    var fourTop = $four.offset().top - $win.scrollTop();
+			    var fiveTop = $five.offset().top - $win.scrollTop();
+			    var sixTop = $six.offset().top - $win.scrollTop();
+			    var sevenTop = $seven.offset().top - $win.scrollTop();
+			    var eightTop = $eight.offset().top - $win.scrollTop();
+			    var nineTop = $nine.offset().top - $win.scrollTop();
+			    var tenTop = $ten.offset().top - $win.scrollTop();
+			    var elevenTop = $eleven.offset().top - $win.scrollTop();
+			    var twelveTop = $twelve.offset().top - $win.scrollTop();
+			    var thirteenTop = $thirteen.offset().top - $win.scrollTop();
+			    var fourteenTop = $fourteen.offset().top - $win.scrollTop();
+			    var fifteenTop = $fifteen.offset().top - $win.scrollTop();
+			    var projectTop = $project.offset().top - $win.scrollTop();
+			    var educationTop = $education.offset().top - $win.scrollTop();
+			    var interestTop = $interest.offset().top - $win.scrollTop();
+			    var footerTop = $footer.offset().top - $win.scrollTop();
+
+			    
+			    if(calenderTop < oneTop || calenderTop > footerTop){
+			    	newMonthYear.innerHTML = month[dateObj.getMonth()] +", " + dateObj.getFullYear();
+					newDate.innerHTML = dateObj.getDate();
+			    }else if(calenderTop > oneTop && calenderTop < twoTop){
+			    	newMonthYear.innerHTML = "Mar, 1992";
+					newDate.innerHTML = (dateObj.getDate() + 4 ) % 30 +1;
+			    }else if(calenderTop > twoTop && calenderTop < threeTop){
+			    	newMonthYear.innerHTML = "Aug, 1991";
+					newDate.innerHTML = (dateObj.getDate() + 11 ) % 30 +1;
+			    }else if(calenderTop > threeTop && calenderTop < fourTop){
+			    	newMonthYear.innerHTML = "May, 1991";
+					newDate.innerHTML = (dateObj.getDate() - 3 +30) % 30 +1;
+			    }else if(calenderTop > fourTop && calenderTop < fiveTop){
+			    	newMonthYear.innerHTML = "Mar, 1983";
+					newDate.innerHTML = (dateObj.getDate() - 17  +30) % 30 +1;
+			    }else if(calenderTop > fiveTop && calenderTop < sixTop){
+			    	newMonthYear.innerHTML = "Sep, 1978";
+					newDate.innerHTML = (dateObj.getDate() +5 ) % 30 +1;
+			    }else if(calenderTop > sixTop && calenderTop < sevenTop){
+			    	newMonthYear.innerHTML = "Oct, 1975";
+					newDate.innerHTML = (dateObj.getDate() + 13 ) % 30 +1;
+			    }else if(calenderTop > sevenTop && calenderTop < eightTop){
+			    	newMonthYear.innerHTML = "Jan, 1960";
+					newDate.innerHTML = (dateObj.getDate() - 9 + 30 ) % 30 +1;
+			    }else if(calenderTop > eightTop && calenderTop < nineTop){
+			    	newMonthYear.innerHTML = "May, 1957";
+					newDate.innerHTML = (dateObj.getDate() +23 ) % 30 +1;
+			    }else if(calenderTop > nineTop && calenderTop < tenTop){
+			    	newMonthYear.innerHTML = "Jul, 1936";
+					newDate.innerHTML = (dateObj.getDate() - 7 +30 )%30 +1;
+			    }else if(calenderTop > tenTop && calenderTop < elevenTop){
+			    	newMonthYear.innerHTML = "Sep, 1934";
+					newDate.innerHTML = (dateObj.getDate() + 23 ) % 30 +1;
+			    }else if(calenderTop > elevenTop && calenderTop < twelveTop){
+			    	newMonthYear.innerHTML = "Oct, 1993";
+					newDate.innerHTML = "9";
+			    }else if(calenderTop > twelveTop && calenderTop < thirteenTop){
+			    	newMonthYear.innerHTML = "Jan, 1805";
+					newDate.innerHTML = (dateObj.getDate() + 17 ) % 30 +1;
+			    }else if(calenderTop > thirteenTop && calenderTop < fourteenTop){
+			    	newMonthYear.innerHTML = "Apr, 1805";
+					newDate.innerHTML = "14";
+			    }else if(calenderTop > fourteenTop && calenderTop < fifteenTop){
+			    	newMonthYear.innerHTML = "Jan, 1805";
+					newDate.innerHTML = (dateObj.getDate()) % 30 +1;
+			    }else if(calenderTop > fifteenTop && calenderTop < projectTop){
+			    	newMonthYear.innerHTML = "Jan, 0000";
+					newDate.innerHTML = "0";
+			    }else if(calenderTop > projectTop && calenderTop < educationTop){
+			    	newMonthYear.innerHTML = "Feb, 1975";
+					newDate.innerHTML = dateObj.getDate();
+			    }else if(calenderTop > educationTop && calenderTop < interestTop){
+			    	newMonthYear.innerHTML = "Jan, 1936";
+					newDate.innerHTML = dateObj.getDate();
+			    }else if(calenderTop > interestTop && calenderTop < footerTop){
+			    	newMonthYear.innerHTML = month[dateObj.getMonth()] +", " + dateObj.getFullYear();
+					newDate.innerHTML = dateObj.getDate();
+			    }else{
+			    	newMonthYear.innerHTML = month[dateObj.getMonth()] +", " + dateObj.getFullYear();
+					newDate.innerHTML = dateObj.getDate();
+			    }
+			});
+
+		</script>
+	</body>
+</html>
